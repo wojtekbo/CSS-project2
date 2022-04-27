@@ -1,0 +1,476 @@
+$color-main: #ff6b6b;
+$color-details1: #f7d428;
+$color-details2: #4ecdc4;
+$color-details3: #a0c242;
+$color-white: #fff;
+$color-black: #000000;
+
+$font-main: "Inconsolata", monospace;
+$font-title: "Signika", sans-serif;
+
+$transition: all 0.5s;
+
+/* Global */
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   font-size: 16px;
+   line-height: 1.7;
+   font-family: $font-main;
+   font-weight: 300;
+   color: $color-black;
+}
+
+.container {
+   max-width: 1140px;
+   padding: 0 20px;
+   margin: 0 auto;
+}
+
+section {
+   padding-top: 96px;
+}
+
+.section-title {
+   font-size: 48px;
+   margin: 0 0 72px 0;
+   font-family: $font-main;
+   text-transform: lowercase;
+}
+
+.element-title {
+   font-size: 24px;
+   font-weight: 400;
+   margin: 0 0 12px 0;
+}
+
+.btn {
+   display: inline-block;
+   min-width: 160px;
+   margin: 24px auto 0 0;
+   padding: 16px;
+   border-radius: 5px;
+   font-family: $font-main;
+   font-size: 16px;
+   text-align: center;
+   text-decoration: none;
+   cursor: pointer;
+   border-width: 2px;
+   border-style: solid;
+   background-position: 100% 0;
+   background-size: 300%;
+   transition: $transition;
+}
+
+.btn-one {
+   color: $color-white;
+   border-color: $color-white;
+   background-color: $color-main;
+   background-image: linear-gradient(90deg, #ffffff 50%, transparent 50%);
+   &:hover {
+      background-position: 0 100%;
+      color: $color-main;
+   }
+}
+
+.btn-two {
+   color: $color-details1;
+   border-color: $color-details1;
+   background-image: linear-gradient(
+      90deg,
+      $color-details1 50%,
+      transparent 50%
+   );
+   &:hover {
+      background-position: 0 100%;
+      color: $color-white;
+   }
+}
+
+.btn-three {
+   color: $color-details2;
+   border-color: $color-details2;
+   background-image: linear-gradient(
+      90deg,
+      $color-details2 50%,
+      transparent 50%
+   );
+   &:hover {
+      background-position: 0 100%;
+      color: $color-white;
+   }
+}
+
+.btn-four {
+   color: $color-details3;
+   border-color: $color-details3;
+   background-image: linear-gradient(
+      90deg,
+      $color-details3 50%,
+      transparent 50%
+   );
+   &:hover {
+      background-position: 0 100%;
+      color: $color-white;
+   }
+}
+
+.btn-five {
+   color: $color-main;
+   border: none;
+   margin: 36px 0;
+   padding: 0;
+   text-align: left;
+   &:hover {
+      color: $color-black;
+   }
+}
+
+/* Navigation */
+/* dodałem  nazwy klas, dla mnie jest bardziej czytelne */
+.navigation {
+   padding: 12px 0;
+   background-color: $color-main;
+   transition: $transition;
+   a {
+      text-decoration: none;
+   }
+}
+.first-lv {
+   padding: 0;
+   margin: 0;
+   list-style-type: none;
+   li {
+      display: inline-block;
+      margin: 36px;
+      position: relative;
+      &:hover .second-lv {
+         display: block;
+      }
+   }
+   a {
+      transition: $transition;
+      color: $color-white;
+      &:hover {
+         color: $color-black;
+         font-weight: bold;
+      }
+   }
+}
+.second-lv {
+   display: none;
+   position: absolute;
+   background-color: $color-white;
+   left: 50%;
+   transform: translateX(-50%);
+   padding: 0;
+   text-align: center;
+   li {
+      display: block;
+      margin-top: 12px;
+      margin-bottom: 12px;
+   }
+   a {
+      color: $color-main;
+      &:hover {
+         color: $color-black;
+      }
+   }
+}
+
+/* Splash */
+.splash {
+   background-color: $color-main;
+   min-height: 500px;
+   color: $color-white;
+   display: flex;
+   .splash-inner {
+      margin: auto;
+      max-width: 70%;
+   }
+}
+.page-title {
+   margin: 0;
+   font-size: 72px;
+   font-weight: 700;
+   line-height: 1.2;
+   word-spacing: -16px;
+   font-family: $font-title;
+   font-family: $font-main;
+   span {
+      text-decoration: underline;
+      font-family: $font-title;
+   }
+}
+.page-subtitle {
+   font-size: 16px;
+   font-weight: 400;
+   margin: 24px 0;
+}
+
+/* Our Services */
+.services {
+   .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+   }
+}
+.service {
+   flex: 0 0 33.333%;
+   position: relative;
+   padding: 12px;
+   display: flex;
+   flex-direction: column;
+   .background-number {
+      font-size: 144px;
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+      top: 0px;
+      left: 8px;
+      opacity: 0.2;
+      color: $color-main;
+      font-family: $font-title;
+   }
+   p {
+      flex-grow: 1;
+      &:first-of-type {
+         font-weight: 700;
+         flex-grow: 0;
+      }
+   }
+   .btn {
+      align-self: flex-start;
+   }
+}
+
+/* Our Work */
+.works {
+   .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+   }
+}
+.work {
+   flex: 0 0 50%;
+   display: flex;
+   margin-bottom: 96px;
+   min-height: 300px;
+   padding: 10px;
+}
+.work-image {
+   flex: 0 0 50%;
+   max-width: 250px;
+   height: 100%;
+   position: relative;
+   img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+   //uzylem div z .overlay zamiast ::after, jak trzeba moge zamienic
+   .overlay {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 100%;
+      height: 100%;
+      background-color: $color-main;
+      opacity: 0.4;
+      transition: $transition;
+   }
+   &:hover .overlay {
+      top: 0px;
+      left: 0px;
+      opacity: 0;
+   }
+}
+.work-description {
+   flex: 1 0 50%;
+   padding: 35px 40px 30px 35px;
+   p {
+      margin: 0;
+      &:last-of-type {
+         font-weight: bold;
+      }
+   }
+}
+
+/* Contact */
+.contact {
+   background-color: $color-main;
+   color: $color-white;
+   padding-bottom: 96px;
+   .section-title {
+      color: $color-white;
+   }
+   .wrapper {
+      display: flex;
+   }
+}
+.form-group {
+   flex: 2 0 0;
+   display: flex;
+   flex-direction: column;
+   input,
+   textarea,
+   input:focus,
+   textarea:focus {
+      background-color: $color-main;
+      font-family: $font-main;
+      border: 0px;
+      border-bottom: 3px;
+      border-style: solid;
+      border-color: $color-white;
+      padding: 12px;
+      margin-bottom: 10px;
+      outline: none;
+      &::placeholder {
+         color: $color-white;
+      }
+   }
+}
+.contact-info {
+   flex: 1 0 0;
+   margin-left: 96px;
+   p {
+      margin: 0;
+   }
+   .contact-title {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 400;
+      margin-top: 20px;
+      &:first-of-type {
+         margin-top: 0;
+      }
+   }
+}
+
+/* Footer */
+
+footer {
+   .container {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      justify-content: center;
+      margin: 48px 0;
+      ul {
+         list-style-type: none;
+         font-size: 0;
+         padding: 0px;
+      }
+   }
+}
+.icon {
+   height: 60px;
+   width: 60px;
+   background-color: $color-main;
+   border-radius: 50%;
+   margin: 0 20px;
+   text-align: center;
+   i {
+      line-height: 60px;
+      font-size: 30px;
+      color: $color-white;
+   }
+}
+
+@media (max-width: 767px) {
+   section {
+      padding-top: 26px;
+   }
+
+   .wrapper {
+      flex-direction: column;
+   }
+
+   .navigation {
+      font-size: 15px;
+   }
+   .first-lv li {
+      margin: 10px;
+   }
+
+   .page-title {
+      font-size: 45px;
+   }
+
+   .section-title {
+      font-size: 40px;
+      margin-bottom: 34px;
+   }
+
+   .service {
+      margin-bottom: 30px;
+      .background-number {
+         font-size: 200px;
+         position: absolute;
+         top: -22px;
+         left: 11px;
+         opacity: 0.2;
+      }
+   }
+   .works {
+      .work {
+         flex-direction: column;
+         margin-bottom: 10px;
+         .work-image {
+            max-width: 100%;
+            max-height: 200px;
+            img {
+               height: 200px;
+            }
+         }
+         .work-description {
+            padding-left: 0px;
+            padding-right: 0px;
+         }
+      }
+   }
+
+   .contact {
+      .form-group {
+         margin-bottom: 96px;
+         input,
+         textarea {
+            font-size: 16px;
+         }
+      }
+
+      .contact-info {
+         margin-left: 0px;
+      }
+   }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+   .works {
+      .wrapper {
+         flex-direction: column;
+         .work {
+            margin-bottom: 20px;
+            .work-image {
+               height: 250px;
+               //    max-height: 300px;
+               img {
+                  height: 250px;
+                  //   max-height: 300px;
+               }
+            }
+            .work-description {
+               padding: 10px 20px 0px 50px;
+            }
+         }
+      }
+   }
+}
